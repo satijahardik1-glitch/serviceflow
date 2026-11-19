@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="ServiceFlow – book background-verified electricians, plumbers, AC and carpentry experts with upfront pricing." />
+    <title>ServiceFlow – Trusted Technician Marketplace</title>
+    <!-- Apply the saved/system theme before first paint so there is no white flash in dark mode -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("sf_theme");
+          var dark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+          document.documentElement.classList.toggle("dark", dark);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-slate-50 text-slate-800 antialiased transition-colors duration-200 dark:bg-slate-950 dark:text-slate-100">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

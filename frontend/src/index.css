@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Native controls (date picker, select popups, scrollbars) follow the theme */
+:root { color-scheme: light; }
+:root.dark { color-scheme: dark; }
+
+/* Visible keyboard focus for buttons and links (inputs already have their own ring) */
+@layer base {
+  button:focus-visible, a:focus-visible {
+    @apply outline-none ring-2 ring-indigo-500 ring-offset-2 ring-offset-slate-50 dark:ring-offset-slate-950;
+  }
+  input::placeholder, textarea::placeholder { @apply text-slate-400 dark:text-slate-500; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
